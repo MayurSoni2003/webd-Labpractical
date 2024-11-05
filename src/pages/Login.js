@@ -4,7 +4,7 @@ function Login() {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const navigate = useNavigate();
     const handleChange = (e) => {
-        setFormData();
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
     const handleLogin = async () => {
         const response = await fetch('http://localhost:5000/api/users/login', {
